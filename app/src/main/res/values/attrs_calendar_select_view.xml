@@ -1,0 +1,11 @@
+<resources>
+    <declare-styleable name="CalendarSelectView">
+        <attr name="exampleString" format="string" />
+        <attr name="exampleDimension" format="dimension" />
+        <attr name="exampleColor" format="color" />
+        <attr name="exampleDrawable" format="color|reference" />
+        <attr name="layout_src" format="string" />
+        <attr name="min_year" format="integer" />
+        <attr name="max_year" format="integer" />
+    </declare-styleable>
+</resources>

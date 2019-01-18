@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/main_button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClick"
+        android:text="阴影控件"
+
+        />
+
+    <Button
+        android:id="@+id/main_button_print_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClick"
+        android:text="打印pdf"
+        app:layout_constraintStart_toEndOf="@+id/main_button_1"
+        app:layout_constraintTop_toTopOf="@+id/main_button_1" />
+
+    <Button
+        android:id="@+id/main_button_fix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClick"
+        android:text="热更新"
+        app:layout_constraintStart_toEndOf="@+id/main_button_print_pdf"
+        app:layout_constraintTop_toTopOf="@+id/main_button_1" />
+
+    <Button
+        android:id="@+id/main_button_data_ri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClick"
+        android:text="日历控件"
+        app:layout_constraintStart_toEndOf="@+id/main_button_fix"
+        app:layout_constraintTop_toTopOf="@+id/main_button_1" />
+
+    <Button
+        android:id="@+id/main_button_float_window"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="myClick"
+        android:text="悬浮窗口"
+        app:layout_constraintStart_toStartOf="@+id/main_button_1"
+        app:layout_constraintTop_toBottomOf="@+id/main_button_1" />
+
+</android.support.constraint.ConstraintLayout>
