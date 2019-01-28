@@ -61,4 +61,13 @@
         app:layout_constraintStart_toStartOf="@+id/main_button_1"
         app:layout_constraintTop_toBottomOf="@+id/main_button_1" />
 
+    <Button
+        android:id="@+id/main_button_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClick"
+        android:text="系统设置"
+        app:layout_constraintStart_toEndOf="@+id/main_button_float_window"
+        app:layout_constraintTop_toTopOf="@+id/main_button_float_window" />
+
 </android.support.constraint.ConstraintLayout>

@@ -12,6 +12,8 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.demo.test.systemSetting.SettingMainActivity;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -164,6 +166,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_button_float_window:
 
                 startActivity(new Intent(this, FloatWindowActivity.class));
+
+                break;
+            case R.id.main_button_setting:
+
+                startActivity(new Intent(this, SettingMainActivity.class));
 
                 break;
 
