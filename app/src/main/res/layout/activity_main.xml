@@ -70,4 +70,13 @@
         app:layout_constraintStart_toEndOf="@+id/main_button_float_window"
         app:layout_constraintTop_toTopOf="@+id/main_button_float_window" />
 
+    <Button
+        android:id="@+id/main_button_PDF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClick"
+        android:text="PDF预览"
+        app:layout_constraintStart_toEndOf="@+id/main_button_setting"
+        app:layout_constraintTop_toTopOf="@+id/main_button_setting" />
+
 </android.support.constraint.ConstraintLayout>

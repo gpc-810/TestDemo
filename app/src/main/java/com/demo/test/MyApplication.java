@@ -1,10 +1,12 @@
 package com.demo.test;
 
 import android.app.Application;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.multidex.MultiDex;
+import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
 import com.demo.test.hotfix.util.FixDexUtils;
@@ -17,10 +19,30 @@ public class MyApplication extends Application {
         return wmParams;
     }
 
+    private WindowManager mWindowManager;
+    private int windowWidth, windowHeight;
+
+    public int getWindowWidth() {
+        return windowWidth;
+    }
+
+    public int getWindowHeight() {
+        return windowHeight;
+    }
+
     @Override
     public void onCreate() {
         // TODO Auto-generated method stub
         super.onCreate();
+        DisplayMetrics dm = new DisplayMetrics();
+        //取得窗口属性
+        mWindowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        mWindowManager.getDefaultDisplay().getMetrics(dm);
+
+        //窗口的宽度
+        windowWidth = dm.widthPixels;
+        //窗口高度
+        windowHeight = dm.heightPixels;
     }
 
     @Override

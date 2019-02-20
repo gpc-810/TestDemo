@@ -12,6 +12,7 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.demo.test.Pdf.PDFMainActivity;
 import com.demo.test.systemSetting.SettingMainActivity;
 
 import java.io.FileInputStream;
@@ -171,6 +172,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_button_setting:
 
                 startActivity(new Intent(this, SettingMainActivity.class));
+
+                break;
+            case R.id.main_button_PDF:
+
+                startActivity(new Intent(this, PDFMainActivity.class));
 
                 break;
 
