@@ -5,12 +5,10 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <!-- 显示顶层浮窗 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" /> <!-- 显示顶层浮窗 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,6 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AudioActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,12 +35,11 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShadowActivity" />
-        <!-- <activity android:name=".FixMainActivity" /> -->
+        <activity android:name=".ShadowActivity" /> <!-- <activity android:name=".FixMainActivity" /> -->
         <activity android:name=".DataCalendarActivity" />
         <activity android:name=".FloatWindowActivity" />
         <activity android:name=".systemSetting.SettingMainActivity" />
-        <activity android:name=".Pdf.PDFMainActivity"></activity>
+        <activity android:name=".Pdf.PDFMainActivity" />
     </application>
 
 </manifest>

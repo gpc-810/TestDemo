@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import com.demo.test.Pdf.PDFMainActivity;
@@ -22,6 +23,8 @@ import java.io.IOException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
+
+    String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         ContentResolver cr = getContentResolver();
-        Cursor cur = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone
-                .CONTACT_ID + " = " + contactId, null, null);
+        Cursor cur = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,
+                ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + contactId, null, null);
         int index = cur.getColumnIndex(ContactsContract.Contacts.LOOKUP_KEY);
         //        String name = cur.getString(cur.getColumnIndex(ContactsContract.CommonDataKinds
         // .Phone.name);
@@ -179,9 +182,57 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, PDFMainActivity.class));
 
                 break;
+            case R.id.main_button_audio:
+
+                startActivity(new Intent(this, AudioActivity.class));
+
+                break;
 
         }
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e(TAG, "onStart: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(TAG, "onRestart: ");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(TAG, "onResume: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(TAG, "onDestroy: ");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(TAG, "onPause: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.e(TAG, "onSaveInstanceState: " );
+    }
 }

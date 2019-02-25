@@ -1,1 +1,1 @@
-include ':app', ':libTest', ':wheelview'
+include ':app', ':libTest', ':wheelview', ':GlideProgress'
