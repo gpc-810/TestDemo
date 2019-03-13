@@ -87,4 +87,25 @@
         app:layout_constraintStart_toEndOf="@+id/main_button_PDF"
         app:layout_constraintTop_toTopOf="@+id/main_button_PDF" />
 
+    <Button
+        android:id="@+id/main_button_glide_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="myClick"
+        android:text="Glide 加载进度"
+        app:layout_constraintStart_toStartOf="@+id/main_button_float_window"
+        app:layout_constraintTop_toBottomOf="@+id/main_button_float_window" />
+
+
+    <Button
+        android:id="@+id/main_button_life_cycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClick"
+        android:text="录音/播放"
+        app:layout_constraintStart_toEndOf="@+id/main_button_glide_progress"
+        app:layout_constraintTop_toTopOf="@+id/main_button_glide_progress" />
+
+
 </android.support.constraint.ConstraintLayout>

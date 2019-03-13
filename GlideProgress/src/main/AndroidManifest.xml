@@ -1,2 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.guo.project.ndk.glideprogress" />
+    package="com.guo.project.ndk.glideprogress">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <meta-data
+            android:name="com.guo.project.ndk.glideprogress.MyGlideModule"
+            android:value="GlideModule" />
+        <activity android:name=".GlideMainActivity"></activity>
+    </application>
+
+</manifest>

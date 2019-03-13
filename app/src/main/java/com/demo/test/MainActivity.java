@@ -15,6 +15,7 @@ import android.view.View;
 
 import com.demo.test.Pdf.PDFMainActivity;
 import com.demo.test.systemSetting.SettingMainActivity;
+import com.guo.project.ndk.glideprogress.GlideMainActivity;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -187,6 +188,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AudioActivity.class));
 
                 break;
+            case R.id.main_button_glide_progress:
+
+                startActivity(new Intent(this, GlideMainActivity.class));
+
+                break;
+            case R.id.main_button_life_cycle:
+
+                startActivity(new Intent(this,BActivity.class));
+
+                break;
 
         }
 
@@ -233,6 +244,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.e(TAG, "onSaveInstanceState: " );
+        Log.e(TAG, "onSaveInstanceState: ");
     }
 }
