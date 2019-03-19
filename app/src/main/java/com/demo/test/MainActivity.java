@@ -195,7 +195,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.main_button_life_cycle:
 
-                startActivity(new Intent(this,BActivity.class));
+                startActivity(new Intent(this, BActivity.class));
+
+                break;
+            case R.id.main_button_aidl:
+
+                startActivity(new Intent(this, AIDLActivity.class));
 
                 break;
 

@@ -19,7 +19,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BActivity"></activity>
+        <service
+            android:name=".service.ItineraryManagerService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".AIDLActivity" />
+        <activity android:name=".BActivity" />
         <activity android:name=".AudioActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

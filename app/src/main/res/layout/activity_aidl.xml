@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/aidl_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="vtime.itinerary.add"
+        android:hint="方法名" />
+
+    <EditText
+        android:id="@+id/aidl_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aidl_method"
+        android:text="{}"
+        android:hint="json参数" />
+
+
+    <Button
+        android:id="@+id/aidl_create_itinerary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aidl_json"
+        android:onClick="myClick"
+        android:text="执行" />
+
+    <Button
+        android:id="@+id/aidl_search_itinerary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/aidl_create_itinerary"
+        android:layout_toEndOf="@id/aidl_create_itinerary"
+        android:onClick="myClick"
+        android:text="空" />
+
+    <TextView
+        android:id="@+id/aidl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/aidl_search_itinerary"
+        android:layout_margin="10dp" />
+
+
+</RelativeLayout>
