@@ -203,6 +203,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AIDLActivity.class));
 
                 break;
+            case R.id.main_button_overlap:
+
+                startActivity(new Intent(this, DoubleSwitchViewActivity.class));
+
+                break;
+            case R.id.main_button_Scrolling:
+
+                startActivity(new Intent(this, ScrollingActivity.class));
+
+                break;
 
         }
 

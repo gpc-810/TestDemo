@@ -1,0 +1,4 @@
+<resources>
+    <declare-styleable name="DoubleSwitchView">
+    </declare-styleable>
+</resources>

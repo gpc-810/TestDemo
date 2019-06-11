@@ -8,7 +8,7 @@
         android:id="@+id/aidl_method"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="vtime.itinerary.add"
+        android:text="remind.delete"
         android:hint="方法名" />
 
     <EditText
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/aidl_method"
-        android:text="{}"
+        android:text="@string/aidl_test_parames"
         android:hint="json参数" />
 
 
@@ -37,12 +37,18 @@
         android:onClick="myClick"
         android:text="空" />
 
-    <TextView
-        android:id="@+id/aidl_content"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/aidl_search_itinerary"
-        android:layout_margin="10dp" />
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/aidl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp" />
+
+    </ScrollView>
 
 
 </RelativeLayout>

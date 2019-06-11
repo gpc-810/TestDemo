@@ -20,6 +20,10 @@ import com.vargo.vtime.IVTimeService;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class AIDLActivity extends AppCompatActivity {
 
     private static final String TAG = "AIDLActivity";
@@ -53,6 +57,20 @@ public class AIDLActivity extends AppCompatActivity {
                 createItinerary();
                 break;
             case R.id.aidl_search_itinerary://查询行程
+                List<String> strings = new ArrayList<>();
+                strings.add("0");
+                strings.add("1");
+                strings.add("2");
+                strings.add("3");
+                strings.add("4");
+                strings.add("5");
+                strings.add("6");
+                strings.add("7");
+                strings.add("8");
+                strings.add("9");
+                strings.add("10");
+                strings = strings.subList(5, 10);
+                mContent.setText(strings.toString());
                 break;
         }
 
