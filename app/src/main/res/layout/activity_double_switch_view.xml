@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DoubleSwitchViewActivity">
+    tools:mContext=".DoubleSwitchViewActivity">
 
     <com.demo.test.widget.DoubleSwitchView
         android:id="@+id/double_switch_view"

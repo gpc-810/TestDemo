@@ -1,6 +1,7 @@
 package com.demo.test;
 
 import android.app.Activity;
+import android.appwidget.AppWidgetManager;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
@@ -8,13 +9,19 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.RemoteViews;
 
+import com.demo.remoteViews.appWidget.ListViewRemoteService;
+import com.demo.remoteViews.appWidget.PunchManager;
 import com.demo.test.Pdf.PDFMainActivity;
 import com.demo.test.systemSetting.SettingMainActivity;
+import com.demo.util.TimeUtil;
 import com.guo.project.ndk.glideprogress.GlideMainActivity;
 
 import java.io.FileInputStream;
@@ -22,6 +29,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -213,10 +224,71 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ScrollingActivity.class));
 
                 break;
+            case R.id.main_remoteView:
+
+                // TODO: 2019/6/12  发送广播 给另外一个应用添加布局
+                sendBroadcastRemoteView();
+
+                break;
 
         }
 
     }
+
+    /**
+     * 发送广播
+     */
+    private void sendBroadcastRemoteView() {
+        Intent intent = new Intent("com.vtime.remote.view.add.action");
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("1");
+        arrayList.add("2");
+        arrayList.add("3");
+        RemoteViews remoteViews = PunchManager.getInstance().setArrayList(arrayList).initView(this);
+        intent.putExtra("remoteView", remoteViews);
+        sendOrderedBroadcast(intent, null);
+        initTimer();
+
+    }
+
+    private void sendBroadcastRemoteUpdata() {
+        Intent intent = new Intent("com.vtime.remote.view.add.update");
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("1");
+        arrayList.add("2");
+        arrayList.add("3");
+        RemoteViews remoteViews = PunchManager.getInstance().setArrayList(arrayList).initView(this);
+
+        intent.putExtra("remoteView", remoteViews);
+        sendOrderedBroadcast(intent, null);
+    }
+
+    private Timer mTimer;
+    private TimerTask mTimerTask;
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            sendBroadcastRemoteUpdata();
+        }
+    };
+
+
+    public void initTimer() {
+        if (mTimer == null) {
+            mTimer = new Timer();
+            if (mTimerTask == null) {
+                mTimerTask = new TimerTask() {
+                    @Override
+                    public void run() {
+                        mHandler.sendEmptyMessage(1);
+                    }
+                };
+            }
+            //每隔1秒发送一次空消息
+            mTimer.schedule(mTimerTask, 0, 1000);
+        }
+    }
+
 
     @Override
     protected void onStart() {
